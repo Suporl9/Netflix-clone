@@ -1,0 +1,125 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(2 , 1fr);
+  grid-gap: 2rem;
+  align-items: center;
+  font-size:2rem;padding:2.5rem;
+  background:var(--main-deep-dark);
+  height:40rem
+}
+.imgclassone{
+  width:37rem;
+}
+.tab-content{
+  display: flex;
+  flex-direction: column;
+  margin-left: 5rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.trybtn{
+  background:var(--main-red);
+  /* font-size: 32rem; */
+  font-size:1.5rem;
+  padding:1rem;
+  border-radius: 2px;
+  margin-top:2rem;
+  transition: all 0.2s ease-out;
+}
+.trybtn1{
+  background:var(--main-red);
+  /* font-size: 32rem; */
+  font-size:1rem;
+  padding:1rem;
+  border-radius: 2px;
+  
+  transition: all 0.2s ease-out;
+}
+
+.trybtn1:hover{
+  background: var(--main-red-hover);
+}
+
+.tab2-bgcont{
+  background:var(--main-deep-dark);
+  height:40rem
+}
+
+.tab2-container{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+.tab2-container1{
+display: flex;
+justify-content: space-between;
+margin-top: 3rem;
+
+}
+.tab2-container2{
+  display:grid;
+  grid-template-columns: repeat(3,1fr);
+  margin-top: 7rem;
+  margin-left:9rem;
+}
+
+.imgsize{
+  width: 20rem;
+}
+.ptag{
+  color: var(--main-grey);
+  margin-top: 5px;
+}
+  .h1p1flex{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin:40px 5px 10px 0 
+  }
+  .tab3-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  .tab3-container2{
+margin:2rem auto;
+  }
+
+  table {
+width:71rem;
+margin-top: 2rem;
+border-collapse: collapse;
+
+  }
+  table thead th{
+    text-transform: uppercase;
+    padding:0.8rem;
+
+  }
+
+  table tbody{
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+
+  }
+  table tbody tr td{
+    color:#999;
+    padding: 0.8rem 1.2rem;
+    text-align: center;
+    
+  }
+
+  table tbody tr td:first-child{
+    text-align: left;
+  } 
+  table tbody tr:nth-child(even){
+    background-color:#222;
+  }

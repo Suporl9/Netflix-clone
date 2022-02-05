@@ -1,0 +1,15 @@
+// {
+//     "emmet.excludeLanguages": [
+
+//         "markdown"
+//     ]
+// }
+
+{
+  "emmet.excludeLanguages": ["markdown"],
+
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact"
+  },
+  "dart.webDaemonLogFile": null
+}
