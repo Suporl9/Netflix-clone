@@ -1,18 +1,18 @@
-import React, { useEffect, useRef, useState } from "react";
-import styled from "styled-components";
-import { Link, useHistory } from "react-router-dom";
-import { facebook } from "react-icons-kit/fa/facebook";
-import Icon from "react-icons-kit";
-import { useAuth } from "../context/AuthProvider";
-import { Alert } from "react-bootstrap";
+import React, { useEffect, useRef, useState } from 'react';
+import styled from 'styled-components';
+import { Link, useHistory } from 'react-router-dom';
+import { facebook } from 'react-icons-kit/fa/facebook';
+import Icon from 'react-icons-kit';
+import { useAuth } from '../context/AuthProvider';
+import { Alert } from 'react-bootstrap';
 
 function Loginform() {
   const inputref1 = useRef(null);
   const { login } = useAuth();
-  const [error, setError] = useState("");
-  const [userid, setuserid] = useState("");
+  const [error, setError] = useState('');
+  const [userid, setuserid] = useState('');
   const [loading, setLoading] = useState(false);
-  const [password, setpassword] = useState("");
+  const [password, setpassword] = useState('');
   const [check, setCheck] = useState(false);
   const history = useHistory();
 
@@ -32,98 +32,100 @@ function Loginform() {
     try {
       setLoading(true);
       await login(userid, password);
-      history.push("/Dashboard");
+      history.push('/Dashboard');
     } catch {}
     setLoading(false);
-    setError("Failed to log in");
+    setError('Failed to log in');
   };
 
   return (
     <FooterContainer>
-      <div className="form-container">
+      <div className='form-container'>
         <form onSubmit={submithandler}>
           <h1>Sign In</h1>
-          {error ? <Alert variant="success">{error}</Alert> : null}
-          <div className="input-container">
+          {error ? <Alert variant='success'>{error}</Alert> : null}
+          <div className='input-container'>
             <input
               value={userid}
               onChange={handlechange}
-              className="input-empty"
-              placeholder="Email or phone number"
-              type="email"
+              className='input-empty'
+              placeholder='Email or phone number'
+              id='loginEmail'
+              type='email'
               ref={inputref1}
               required
             ></input>
           </div>
-          <div className="input-container">
+          <div className='input-container'>
             <input
-              className="input-empty"
-              type="password"
+              className='input-empty'
+              type='password'
               value={password}
               onChange={(e) => setpassword(e.target.value)}
-              placeholder="Password"
+              placeholder='Password'
+              id='loginPassword'
               required
             ></input>
           </div>
-          <div className="input-container">
-            <button disabled={loading} to="/" className="linkbtn" type="submit">
+          <div className='input-container'>
+            <button disabled={loading} to='/' className='linkbtn' type='submit'>
               Sign In
             </button>
           </div>
-          <div className="flexrememberandhelp">
-            <div className="remembermeclass">
+          <div className='flexrememberandhelp'>
+            <div className='remembermeclass'>
               <input
-                type="checkbox"
+                type='checkbox'
                 checked={check}
                 onChange={onchangeCheckbox}
               ></input>
-              <label className="labelclass">Remember Me</label>
+              <label className='labelclass'>Remember Me</label>
             </div>
             <div>
-              <Link to="/" className="needhelp">
+              <Link to='/' className='needhelp'>
                 Need help?
               </Link>
             </div>
           </div>
-          <div className="flexloginw">
-            <div className="fblogin">
-              <div className="fblogo">
-                <Icon icon={facebook} className="fbicon"></Icon>
+          <div className='flexloginw'>
+            <div className='fblogin'>
+              <div className='fblogo'>
+                <Icon icon={facebook} className='fbicon'></Icon>
               </div>
-              <div className="pfb">
+              <div className='pfb'>
                 <p
                   style={{
-                    marginLeft: "10px",
-                    fontSize: "0.8rem",
-                    color: "#808080",
+                    marginLeft: '10px',
+                    fontSize: '0.8rem',
+                    color: '#808080',
                   }}
                 >
                   Log in with facebook
                 </p>
               </div>
             </div>
-            <div className="newton">
-              <div className="new">
+            <div className='newton'>
+              <div className='new'>
                 <p>New to netflix?</p>
               </div>
               <Link
-                to="/signup"
-                className="sigup"
-                type="submit"
-                style={{ cursor: "pointer" }}
+                to='/signup'
+                className='sigup'
+                type='submit'
+                style={{ cursor: 'pointer' }}
               >
                 Sign up now.
               </Link>
             </div>
-            <div className="pgproct">
+            <div className='pgproct'>
               <p>
                 This page is protected by Google reCAPTCHA to ensure you're not
                 a bot.
                 <Link
-                  to="/login"
+                  to='/login'
                   style={{
-                    fontSize: "0.8rem",
-                    color: "#0052cc",
+                    fontSize: '0.8rem',
+                    color: '#0052cc',
                   }}
                 >
                   Learn more.
