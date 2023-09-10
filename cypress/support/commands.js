@@ -2,8 +2,8 @@
 // This example commands.js shows you how to
 // create various custom commands and overwrite
 // existing commands.
-// import faker from 'faker';
-// import _ from 'lodash';
+import { faker } from '@faker-js/faker';
+import _ from 'lodash';
 
 //
 // For more comprehensive examples of custom
@@ -26,13 +26,13 @@
 //
 // -- This will overwrite an existing command --
 // Cypress.Commands.overwrite('visit', (originalFn, url, options) => { ... })
-// Cypress.Commands.add('generateFixtures', () => {
-//   cy.writeFile('cypress/fixtures/users.json', {
-//     hits: Cypress._.times(20, () => {
-//       return {
-//         email: faker.internet.email,
-//         password: faker.internet.password,
-//       };
-//     }),
-//   });
-// });
+Cypress.Commands.add('generateFixtures', () => {
+  cy.writeFile('cypress/fixtures/users.json', {
+    hits: Cypress._.times(20, () => {
+      return {
+        email: faker.internet.email(),
+        password: faker.internet.password(),
+      };
+    }),
+  });
+});
